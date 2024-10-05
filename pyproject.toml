@@ -1,0 +1,72 @@
+[project]
+name = "ddd-python"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["fastapi[standard]>=0.115.0"]
+
+[tool.uv]
+dev-dependencies = [
+    "mypy>=1.11.2",
+    "pre-commit>=3.8.0",
+    "pytest-cov>=5.0.0",
+    "pytest-sugar>=1.0.0",
+    "pytest>=8.3.3",
+    "ruff>=0.6.9",
+]
+
+[tool.ruff]
+src = ["src"]
+line-length = 88
+select = [
+    "F",   # Pyflakes
+    "E",   # pycodestyle - Errors
+    "W",   # pycodestyle - Warnings
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "YTT", # flake8-2020
+    "S",   # flake8-bandit
+    "B",   # flake8-bugbear
+    "COM", # flake8-commas
+    "C4",  # flake8-comprehensions
+    "DTZ", # flake8-datetimez
+    "EM",  # flake8-errmsg
+    "EXE", # flake8-executable
+    "FA",  # flake8-future-annotations
+    "ISC", # flake8-implicit-str-concat
+    "ICN", # flake8-import-conventions
+    "G",   # flake8-logging-format
+    "INP", # flake8-no-pep420
+    "PIE", # flake8-pie
+    "T20", # flake8-print
+    "PYI", # flake8-pyi
+    "Q",   # flake8-quotes
+    "RSE", # flake8-raise
+    "RET", # flake8-return
+    "SIM", # flake8-simplify
+    "INT", # flake8-gettext
+    "PL",  # Pylint
+]
+ignore = []
+target-version = "py312"
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+plugins = []
+
+[tool.coverage.run]
+omit = ["__init__.py"]
+
+[tool.coverage.paths]
+source = ["src"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 95
