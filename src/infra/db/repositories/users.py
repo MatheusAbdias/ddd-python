@@ -1,11 +1,13 @@
+from dataclasses import dataclass
+
 from src.infra.db.models.users import User
 from src.infra.db.repositories.base import PostgresRepository
 
 
+@dataclass
 class PostgresUsersRepository(PostgresRepository[User]):
-    def __init__(self):
-        super().__init__(User)
+    model = User
 
-    async def create_user(self, first_name: str, last_name: str, age: int) -> User:
-        user = User(first_name=first_name, last_name=last_name, age=age)
+    async def create_user(self, name: str, document: str) -> User:
+        user = User(name=name, document=document)
         return await self.insert(user)
