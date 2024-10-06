@@ -12,8 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 class PostgresRepository(Generic[T]):
-    def __init__(self, model: type[T]):
-        self.model = model
+    model: type[T]
 
     async def insert(self, model_instance: T) -> T:
         async with AsyncDBSessionsManager() as database:
