@@ -1,22 +1,17 @@
-from contextlib import asynccontextmanager
-
-import databases
+from sqlalchemy.ext.asyncio import create_async_engine
+from sqlmodel.ext.asyncio.session import AsyncSession
 
 from src.config.environment import settings
 
-database = databases.Database(str(settings.POSTGRES_URI))
+engine = create_async_engine(str(settings.POSTGRES_URI), echo=True)
 
 
-@asynccontextmanager
-async def database_context():
-    await connect_database()
-    yield database
-    await disconnect_database()
+class AsyncDBSessionsManager:
+    session: AsyncSession
 
+    async def __aenter__(self) -> "AsyncDBSessionsManager":
+        self.session = AsyncSession(engine, expire_on_commit=False)
+        return self
 
-async def connect_database():
-    await database.connect()
-
-
-async def disconnect_database():
-    await database.disconnect()
+    async def __aexit__(self, *args) -> None:
+        await self.session.close()
