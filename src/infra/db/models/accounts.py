@@ -1,17 +1,14 @@
-import enum
-
 from sqlmodel import Field
 
-from src.infra.db.models.base import TimeStampedModel
+from core.accounts.entities.enums import AccountType
+from infra.db.models.base import TimeStampedModel
 
 
-class AccountType(str, enum.Enum):
-    PERSONAL = "PERSONAL"
-    BUSINESS = "BUSINESS"
-
-
-class Account(TimeStampedModel, table=True):
+class Account(TimeStampedModel):
     type: AccountType = Field(nullable=False)
     balance: int = Field(default=0, nullable=False)
-    branch: str
-    number: str
+    branch: str = Field(default="", nullable=False)
+    number: str = Field(default="", nullable=False)
+
+    def __repr__(self) -> str:
+        return f"Account(id={self.id}, type={self.type}, balance={self.balance}"
