@@ -1,7 +1,7 @@
-from src.infra.db.models.base import Model
+from infra.db.models.base import Model
 
 
-class User(Model, table=True):
+class User(Model):
     document: str
     name: str
 

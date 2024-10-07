@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from src.infra.db.models.users import User
-from src.infra.db.repositories.base import PostgresRepository
+from infra.db.models.users import User
+from infra.db.repositories.base import PostgresRepository
 
 
 @dataclass

@@ -3,8 +3,8 @@ from typing import Generic, TypeVar
 
 from sqlmodel import select
 
-from src.infra.db.connection import AsyncDBSessionsManager
-from src.infra.db.models.base import Model
+from infra.db.connection import AsyncDBSessionsManager
+from infra.db.models.base import Model
 
 T = TypeVar("T", bound=Model)
 

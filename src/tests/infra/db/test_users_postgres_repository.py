@@ -1,7 +1,7 @@
 import pytest
 
-from src.infra.db.models.users import User
-from src.infra.db.repositories.users import PostgresUsersRepository
+from infra.db.models.users import User
+from infra.db.repositories.users import PostgresUsersRepository
 
 
 @pytest.mark.asyncio
