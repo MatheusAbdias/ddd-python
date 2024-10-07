@@ -59,7 +59,7 @@ select = [
     "INT", # flake8-gettext
     "PL",  # Pylint
 ]
-ignore = ["S101"]
+ignore = ["S101", "B008"]
 target-version = "py312"
 
 [tool.mypy]
