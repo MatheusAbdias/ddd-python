@@ -1,7 +1,7 @@
 import pytest
 
-from infra.db.models.accounts import Account, AccountType
-from infra.db.repositories.accounts import PostgresAccountsRepository
+from src.infra.db.models.accounts import Account, AccountType
+from src.infra.db.repositories.accounts import PostgresAccountsRepository
 
 
 @pytest.mark.asyncio

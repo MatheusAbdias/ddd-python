@@ -3,7 +3,7 @@ from datetime import datetime
 from sqlmodel import Column, DateTime, Field, SQLModel, func
 
 
-class Model(SQLModel, table=True):
+class Model(SQLModel):
     id: int | None = Field(default=None, primary_key=True)
 
 

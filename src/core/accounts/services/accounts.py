@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
-from core.accounts.entities.dto import AccountRegistryDTO
-from infra.db.models.accounts import Account
-from infra.db.repositories.accounts import PostgresAccountsRepository
+from src.core.accounts.entities.dto import AccountRegistryDTO
+from src.infra.db.models.accounts import Account
+from src.infra.db.repositories.accounts import PostgresAccountsRepository
 
 
 @dataclass

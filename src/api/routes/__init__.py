@@ -1,6 +1,6 @@
 from fastapi.applications import FastAPI
 
-from api.routes import accounts
+from src.api.routes import accounts
 
 
 def register_routers(app: FastAPI) -> FastAPI:

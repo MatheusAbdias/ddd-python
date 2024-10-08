@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
-from core.accounts.entities.enums import AccountType
-from infra.db.models.accounts import Account
-from infra.db.repositories.base import PostgresRepository
+from src.core.accounts.entities.enums import AccountType
+from src.infra.db.models.accounts import Account
+from src.infra.db.repositories.base import PostgresRepository
 
 
 @dataclass

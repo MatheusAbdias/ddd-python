@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from core.accounts.entities.enums import AccountType
+from src.core.accounts.entities.enums import AccountType
 
 
 class AccountReadDTO(BaseModel):

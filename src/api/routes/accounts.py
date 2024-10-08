@@ -1,8 +1,8 @@
 from fastapi import Depends
 from fastapi.routing import APIRouter
 
-from core.accounts.entities.dto import AccountReadDTO, AccountRegistryDTO
-from core.accounts.services.accounts import AccountService
+from src.core.accounts.entities.dto import AccountReadDTO, AccountRegistryDTO
+from src.core.accounts.services.accounts import AccountService
 
 router = APIRouter(tags=["Accounts"])
 

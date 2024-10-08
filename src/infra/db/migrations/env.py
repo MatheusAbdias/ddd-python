@@ -6,9 +6,9 @@ from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
-import infra.db.models  # noqa
-from config.environment import settings
-from infra.db.models.base import Model
+from src.infra.db.models.base import Model
+import src.infra.db.models  # noqa
+from src.config.environment import settings
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
